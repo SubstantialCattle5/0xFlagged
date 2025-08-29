@@ -13,22 +13,26 @@ Username: bandit0
 Password: bandit0
 ```
 
-## Theory 
-     ssh (SSH client) is a program for logging into a remote machine and for executing commands on a remote
-     machine.  It is intended to provide secure encrypted communications between two untrusted hosts over an
-     insecure network.  X11 connections, arbitrary TCP ports and UNIX-domain sockets can also be forwarded over
-     the secure channel.
+## Theory
 
-     ssh connects and logs into the specified destination, which may be specified as either [user@]hostname or a
-     URI of the form ssh://[user@]hostname[:port].  The user must prove their identity to the remote machine
-     using one of several methods (see below).
+SSH (Secure Shell) is a program for logging into a remote machine and executing commands on that machine. It provides secure encrypted communications between two untrusted hosts over an insecure network. X11 connections, arbitrary TCP ports and UNIX-domain sockets can also be forwarded over the secure channel.
+
+SSH connects and logs into the specified destination, which may be specified as either `[user@]hostname` or a URI of the form `ssh://[user@]hostname[:port]`. The user must prove their identity to the remote machine using one of several methods including password authentication, public key authentication, or other methods.
 
 ## Solution
 
+To connect to the Bandit Level 0 server, use the following SSH command:
 
 ```sh
 ssh bandit0@bandit.labs.overthewire.org -p 2220
 ```
 
-you should then be prompted for the password, after entering the correct password one should be able to log into the 
-remote machine. This concludes the level 0.
+Breaking down the command:
+- `ssh` - The SSH client program
+- `bandit0` - The username to connect with
+- `bandit.labs.overthewire.org` - The hostname of the server
+- `-p 2220` - Specifies the port number (2220 instead of the default port 22)
+
+After running this command, you will be prompted for the password. Enter `bandit0` as the password. Once authenticated successfully, you will have access to the remote machine and can proceed to Level 1.
+
+This concludes Level 0 of the Bandit challenges.
